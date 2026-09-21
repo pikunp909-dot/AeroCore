@@ -5,13 +5,6 @@ pluginManagement {
         gradlePluginPortal()
         maven { url = uri("https://jitpack.io") }
     }
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.id == "com.github.kezong.fat-aar") {
-                useModule("com.github.kezong:fat-aar:1.3.9")
-            }
-        }
-    }
 }
 
 dependencyResolutionManagement {

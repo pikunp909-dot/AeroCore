@@ -1,8 +1,6 @@
-plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
-    id("com.github.kezong.fat-aar")
-}
+apply plugin: 'com.android.library'
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'com.kezong.fat-aar'   // ← Yeh plugin name hai
 
 android {
     namespace = "com.aerocore"
@@ -58,23 +56,15 @@ android {
 }
 
 dependencies {
-    // ============================================
     // BLACKBOX CORE — embed for packaging
-    // ============================================
     embed(project(":blackbox-core"))
 
-    // AndroidX
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.security:security-crypto:1.1.0-alpha06")
-
-    // BouncyCastle (Ed25519)
     implementation("org.bouncycastle:bcprov-jdk18on:1.77")
-
-    // JSON
     implementation("com.google.code.gson:gson:2.10.1")
 
-    // Tests
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
