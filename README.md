@@ -6,3 +6,4 @@ AeroCore is a high-performance, robust drop-in replacement for expired UJJWAL/Me
 - Native ShadowHook integration & Anti-Debug/Anti-Tamper protections
 - Forked BlackBox virtual engine core
 - Full MetaCore backward-compatibility shim
+# Trigger build 1789973497
