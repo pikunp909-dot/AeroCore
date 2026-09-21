@@ -61,7 +61,7 @@ dependencies {
     // ============================================
     // BLACKBOX CORE — YEH ZAROORI HAI
     // ============================================
-    implementation(project(":blackbox-core"))
+    api(project(":blackbox-core"))
 
     // AndroidX
     implementation("androidx.core:core-ktx:1.12.0")
