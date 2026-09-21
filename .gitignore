@@ -1,0 +1,26 @@
+# Gradle
+.gradle/
+build/
+*/build/
+
+# Android
+local.properties
+*.apk
+*.aar
+*.ap_
+*.dex
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# BlackBox git data
+blackbox-core/.git/
+
+# Logs
+*.log

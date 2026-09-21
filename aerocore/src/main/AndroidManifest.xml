@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.aerocore">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application>
+        <service
+            android:name=".remote.AeroRemoteService"
+            android:exported="false"
+            android:enabled="true" />
+        <service
+            android:name="android.MetaCore.Service.RemoteManagerService"
+            android:exported="false"
+            android:enabled="true" />
+    </application>
+
+</manifest>
