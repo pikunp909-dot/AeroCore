@@ -3,19 +3,11 @@ apply plugin: 'com.android.library'
 android {
     namespace 'top.niunaijun.blackbox'
 
-    compileSdk rootProject.ext.compileSdkVersion
-
-
-    aidlPackagedList "android/app/IServiceConnection.aidl"
-    aidlPackagedList "android/accounts/IAccountManagerResponse.aidl"
-    buildFeatures {
-        aidl true
-    }
-    buildFeatures {
-        prefab true
-    }
+    compileSdk = 34
+    
+    //...
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdk
+        minSdk = 21
 
         consumerProguardFiles "consumer-rules.pro"
         ndk {
