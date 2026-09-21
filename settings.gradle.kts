@@ -20,7 +20,6 @@ rootProject.name = "AeroCore"
 include(":aerocore")
 include(":sample")
 
-// BlackBox modules
 include(":blackbox-core")
 project(":blackbox-core").projectDir = file("blackbox-core/Bcore")
 
