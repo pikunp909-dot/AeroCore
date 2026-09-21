@@ -38,15 +38,15 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Build AeroCore AAR
-      run: ./gradlew :aerocore:assembleRelease --stacktrace 2>&1 | tee build.log
+    - name: Build AeroCore Merged AAR
+      run: ./gradlew :aerocore:mergeBcoreIntoAar --stacktrace 2>&1 | tee build.log
 
-    - name: Upload AAR
+    - name: Upload Merged AAR
       if: success()
       uses: actions/upload-artifact@v4
       with:
-        name: aerocore-release
-        path: aerocore/build/outputs/aar/*.aar
+        name: aerocore-release-merged
+        path: aerocore/build/outputs/aar/aerocore-release-merged.aar
         retention-days: 30
 
     - name: Upload build log
