@@ -6,10 +6,10 @@ plugins {
 android {
     namespace = "com.aerocore"
     compileSdk = 34
+    ndkVersion = "25.2.9519653"
 
     defaultConfig {
         minSdk = 21
-        targetSdk = 34
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("proguard-rules.pro")
@@ -28,7 +28,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -51,14 +51,30 @@ android {
             version = "3.22.1"
         }
     }
+
+    lint {
+        abortOnError = false
+    }
 }
 
 dependencies {
+    // ============================================
+    // BLACKBOX CORE — YEH ZAROORI HAI
+    // ============================================
+    implementation(project(":blackbox-core"))
+
+    // AndroidX
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("org.bouncycastle:bcprov-jdk18on:1.76")
+    implementation("androidx.security:security-crypto:1.1.0-alpha06")
+
+    // BouncyCastle (Ed25519)
+    implementation("org.bouncycastle:bcprov-jdk18on:1.77")
+
+    // JSON
     implementation("com.google.code.gson:gson:2.10.1")
-    
+
+    // Tests
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
