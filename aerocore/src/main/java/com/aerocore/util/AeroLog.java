@@ -6,13 +6,15 @@ public final class AeroLog {
     private static final String TAG = "AeroCore";
     private static volatile boolean sVerbose = false;
 
+    private AeroLog() {}
+
     public static void setVerbose(boolean verbose) {
         sVerbose = verbose;
     }
 
     public static void d(String msg) {
         if (sVerbose) {
-            Log.debug(TAG, msg);
+            Log.d(TAG, msg);
         }
     }
 
@@ -24,11 +26,11 @@ public final class AeroLog {
         Log.w(TAG, msg);
     }
 
-    public static void e(String msg, Throwable tr) {
-        Log.e(TAG, msg, tr);
-    }
-
     public static void e(String msg) {
         Log.e(TAG, msg);
+    }
+
+    public static void e(String msg, Throwable tr) {
+        Log.e(TAG, msg, tr);
     }
 }
