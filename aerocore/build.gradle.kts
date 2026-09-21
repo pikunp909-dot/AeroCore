@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("com.github.kezong.fat-aar")
 }
 
 android {
@@ -10,7 +11,6 @@ android {
 
     defaultConfig {
         minSdk = 21
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("proguard-rules.pro")
 
@@ -59,9 +59,9 @@ android {
 
 dependencies {
     // ============================================
-    // BLACKBOX CORE — YEH ZAROORI HAI
+    // BLACKBOX CORE — embed for packaging
     // ============================================
-    api(project(":blackbox-core"))
+    embed(project(":blackbox-core"))
 
     // AndroidX
     implementation("androidx.core:core-ktx:1.12.0")
